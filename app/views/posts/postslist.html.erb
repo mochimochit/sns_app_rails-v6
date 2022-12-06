@@ -1,0 +1,12 @@
+<h1>投稿一覧ページ</h1>
+
+
+<% @posts.each do |post|%>
+    <div class="post-item">
+        <div class="post-content"><%= link_to(post.content, "/posts/#{post.id}") %></div>
+        <div class="post-button">
+        <div class="post-button-edit"><%= button_to("編集", "/posts/#{post.id}/edit",{method: "get"}) %></div>
+        <div class="post-button-delete"><%= button_to("削除", "/posts/#{post.id}/destroy",{method: "post"}) %></div>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SnsApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <div class="logo"><a href="/">logo</a></div>
+    <nav>
+      <ul class="header-menus">
+        <li><%= link_to("プロフィール","/profile") %></li>
+        <li><%= link_to("投稿","/posts") %></li>
+        <li><%= link_to("投稿一覧","/postslist") %></li>
+        <li><%= link_to("ログイン","/login") %></li>
+        <li><%= link_to("ユーザー一覧","/users/index") %></li>
+        <li><%= link_to("新規登録", "/signup") %></li>
+      </ul>
+    </nav>
+  </header>
+    <% if %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

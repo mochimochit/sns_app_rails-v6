@@ -1,0 +1,11 @@
+<h1>投稿詳細ページ</h1>
+
+<%= @id %>
+<%= @post.content %>
+<%= @post.created_at %>
+
+
+<div class="post-menus">
+    <%= button_to("編集", "/posts/#{@post.id}/edit",{method:"get"}) %>
+    <%= button_to("削除", "/posts/#{@post.id}/destroy",{method:"post"}) %>
+</div>

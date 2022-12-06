@@ -1,0 +1,14 @@
+
+<% @user.errors.full_messages.each do |message| %>
+  <div class="form-error">
+    <%= message %>
+  </div>
+<% end %>
+
+<%= form_with url: "/users/create", local: true do |f| %>
+  <p>ユーザー名</p>
+  <div class="users-edit"><%= f.text_field :name %></div>
+  <p>メールアドレス</p>
+  <div class="users-edit"><%= f.text_field :email %></div>
+  <%= f.submit "新規登録" %>
+<% end %>
