@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   get "signup" => "users#new"
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
+  get 'login' => 'users#login'
+  post "login" => "users#login"
 
   get 'users/index'
   get 'posts' => 'posts#post'
   get 'postslist' => 'posts#postslist'
   get 'posts/:id/edit' => 'posts#edit'
   get '/' => 'home#top'
-  get 'login' => 'home#login'
   get 'profile' => 'home#profile'
   get 'posts/:id' => 'posts#show'
 

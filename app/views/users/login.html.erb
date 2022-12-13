@@ -1,0 +1,7 @@
+<%= form_with url: "/login", local: true do |f| %>
+    <p>メールアドレス</p>
+    <%= f.text_field :email ,value:@email %>
+    <p>パスワード</p>
+    <%= f.text_field :password ,value:@password %>
+    <%= f.submit "ログイン" %>
+<% end %>

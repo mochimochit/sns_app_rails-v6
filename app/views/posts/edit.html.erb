@@ -1,5 +1,3 @@
-
-
 <%= form_with url: "/posts/#{@post.id}/update", local: true do |f| %>
     <div class="post-edit"><%= f.text_area :content ,value: @post.content%></div>
     <%= f.submit "保存  " %>
