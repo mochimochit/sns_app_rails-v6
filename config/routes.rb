@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :devise_users
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
