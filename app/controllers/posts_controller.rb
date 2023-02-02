@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  before_action :authenticate_devise_user!
+
   def posts
     @posts = Post.new
   end
 
   def postslist
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.where(user_id:current_devise_user.id).order(created_at: :desc)
   end
 
   def show
@@ -13,9 +15,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content:params[:content])
+    @post = Post.new(content:params[:content],user_id:current_devise_user.id)
     if @post.save
-      redirect_to("/postslist")
+      redirect_to("/posts/postslist")
     else
       render("posts/post")
     end
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     if @post.save
       flash[:notice] = "投稿を編集しました"
-      redirect_to('/postslist')
+      redirect_to('/posts/postslist')
     else
       render("posts/edit")
     end
@@ -39,6 +41,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id:params[:id])
     @post.destroy
-    redirect_to('/postslist')
+    redirect_to('/posts/postslist')
   end
 end

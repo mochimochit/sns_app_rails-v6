@@ -1,24 +1,24 @@
 class UsersController < ApplicationController
+  before_action :authenticate_devise_user!
+
   def index
-    @users = User.all
+    @users = DeviseUser.all
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = DeviseUser.find_by(id: params[:id])
+    @posts = Post.where(user_id:params[:id]).order(created_at: :desc)
   end
 
   def new
     @user = User.new
+
   end
 
   def create
-    @user = User.new(name: params[:name], email: params[:email],image_name: "default_user.jpg")
-    if @user.save
-      flash[:notice] = "ユーザー登録が完了しました"
-      redirect_to("/users/#{@user.id}")
-    else
-      render("users/new")
-    end
+    # @user = User.create(user_id:current_devise_user.id)
+    @user = User.create({name:params[:name],email:params[:email],avatar:params[:avatar]})
+    render action: :new
   end
 
   def edit

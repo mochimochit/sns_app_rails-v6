@@ -4,11 +4,18 @@
     <%= message %>
   </div>
 <% end %>
-
-<%= form_with url: "/users/create", local: true do |f| %>
-  <p>ユーザー名</p>
-  <div class="users-edit"><%= f.text_field :name %></div>
-  <p>メールアドレス</p>
-  <div class="users-edit"><%= f.text_field :email %></div>
-  <%= f.submit "新規登録" %>
+<% if devise_user_signed_in? %>
+  <div><%= current_devise_user.id %></div>
 <% end %>
+-----------------
+<%= form_with url: "/users/create", local: true  do |form| %>
+  <p>name</p>
+  <%= form.text_field :name %><br>
+  <p>email</p>
+  <%= form.text_field :email %><br>
+  <p>プロフィール画像</p>
+  <%= form.file_field :avatar %><br>
+  <%= form.submit value="新規登録"%>
+<% end %>
+
+

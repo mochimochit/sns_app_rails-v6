@@ -2,7 +2,9 @@
 
 <div class="post-form">  
     <%= form_tag("/posts/create") do %>
-        <textarea name="content"><%= @post %></textarea>
-        <input type="submit" value="投稿">
+        <div class="post-content">
+            <textarea name="content"><%= @post %></textarea>
+            <input type="submit" value="投稿" class="post-btn">
+        </div>
     <% end %>
 </div>

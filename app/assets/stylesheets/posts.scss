@@ -1,3 +1,175 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts_post{
+    .test{
+        color: red;
+    }
+    
+    .post-item{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        background-color: gray;
+        font-size: 30px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    
+    .post-button{
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        padding-right: 30px;
+    }
+    
+    .post-content{
+        padding: 30px 30px;
+    }
+    
+    .post-edit textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    .post-form textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    
+    .post-btn{
+        padding: 30px 60px;
+        background-color: gray;
+        margin: 0 0 0 auto;
+    }
+    
+    .post-content{
+        margin: 0 auto;
+        width: 80%;
+        text-align:right
+    }
+}
+
+.posts_postslist{
+    .test{
+        color: red;
+    }
+    
+    .post-item{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        background-color: gray;
+        font-size: 30px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    
+    .post-button{
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        padding-right: 30px;
+    }
+    
+    .post-content{
+        padding: 30px 30px;
+    }
+    
+    .post-edit textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    .post-form textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    
+    .post-btn{
+        padding: 30px 60px;
+        background-color: gray;
+        margin: 0 0 0 auto;
+    }
+    
+    .post-content{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+.posts_create{
+    .test{
+        color: red;
+    }
+    
+    .post-item{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        background-color: gray;
+        font-size: 30px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    
+    .post-button{
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        padding-right: 30px;
+    }
+    
+    .post-content{
+        padding: 30px 30px;
+    }
+    
+    .post-edit textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    .post-form textarea{
+        display: block;
+        font-size: 20px;
+        padding: 20px;
+        min-height: 200px;
+        min-width: 100%;
+        resize: none;
+        margin: 20px auto;
+    }
+    
+    .post-btn{
+        padding: 30px 60px;
+        background-color: gray;
+        margin: 0 0 0 auto;
+    }
+    
+    .post-content{
+        margin: 0 auto;
+        width: 80%;
+    }
+}

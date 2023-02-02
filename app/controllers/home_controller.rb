@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_devise_user!, except: [:top]
   def top
   end
 

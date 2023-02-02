@@ -1,6 +1,28 @@
 
 <h1>ユーザー一覧</h1>
-<% @users.each do |user| %>
-    <div class="profile-img"><img src="<%= "/user_images/#{user.image_name}" %>"></div>
-    <div><%= link_to(user.name, "/users/#{user.id}") %></div>
-<% end %>
+
+<%= link_to("ユーザ情報登録","/users/new") %>
+
+
+<table border="1">
+    <tr>
+        <th>USER_ID</th>
+        <th>名前</th>
+        <th>プロフィール画像</th>
+        <th>メールアドレス</th>
+    </tr>
+
+    
+    <% @users.each do |user|%>
+    <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to(user.name, "/users/#{user.id}") %></td>
+        <td>
+            <% if user.image.attached? %>
+                <%= image_tag user.thumbnail %>
+            <% end %>
+        </td>
+        <td><%= link_to(user.email, "/users/#{user.id}") %></td>
+    </tr>
+    <% end %>
+</table>

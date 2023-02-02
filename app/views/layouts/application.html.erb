@@ -10,18 +10,22 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='<%= "#{controller.controller_name}_#{controller.action_name}" %>'>
   <header>
     <div class="logo"><a href="/">logo</a></div>
     <nav>
       <ul class="header-menus">
-        <li><%= link_to("プロフィール","/profile") %></li>
+        <li><%= link_to("プロフィール","/home/profile") %></li>
         <li><%= link_to("投稿","/posts") %></li>
-        <li><%= link_to("投稿一覧","/postslist") %></li>
-        <li><%= link_to("ログイン","/devise_users/sign_in") %></li>
+        <li><%= link_to("投稿一覧","/posts/postslist") %></li>
         <li><%= link_to("ユーザー一覧","/users/index") %></li>
-        <li><%= link_to("新規登録", "/signup") %></li>
-        <li><%= link_to("ログアウト", destroy_devise_user_session_path, method: :delete )%></li>
+        <% if devise_user_signed_in? %>
+          <li><%= link_to("ログアウト", destroy_devise_user_session_path, method: :delete )%></li>
+          <li>ログイン中</li>
+        <% else %>
+          <li><%= link_to("新規登録", new_devise_user_registration_path) %></li>
+          <li><%= link_to("ログイン",devise_user_session_path) %></li>
+        <% end %>
 
       </ul>
     </nav>
@@ -29,9 +33,6 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if devise_user_signed_in? %>
-      <p>ログイン中</p>
-    <% end %>
 
     <%= yield %>
   </body>

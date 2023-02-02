@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :devise_users
+  # resources :users
+  # resources :posts
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
-  get "signup" => "users#new"
+  get "users/new" => "users#new"
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   get 'login' => 'users#login'
@@ -11,10 +13,10 @@ Rails.application.routes.draw do
 
   get 'users/index'
   get 'posts' => 'posts#post'
-  get 'postslist' => 'posts#postslist'
+  get 'posts/postslist' => 'posts#postslist'
   get 'posts/:id/edit' => 'posts#edit'
   get '/' => 'home#top'
-  get 'profile' => 'home#profile'
+  get 'home/profile' => 'home#profile'
   get 'posts/:id' => 'posts#show'
 
   post 'posts/create' => 'posts#create'
